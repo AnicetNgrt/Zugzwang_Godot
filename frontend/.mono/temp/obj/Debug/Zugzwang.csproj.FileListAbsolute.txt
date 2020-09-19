@@ -1,0 +1,6 @@
+/home/anicetnougaret/Work/ProgrammingProjects/GodotProjects/Zugzwang/.mono/temp/bin/Debug/Zugzwang.dll
+/home/anicetnougaret/Work/ProgrammingProjects/GodotProjects/Zugzwang/.mono/temp/bin/Debug/Zugzwang.pdb
+/home/anicetnougaret/Work/ProgrammingProjects/GodotProjects/Zugzwang/.mono/temp/obj/Debug/Zugzwang.csprojAssemblyReference.cache
+/home/anicetnougaret/Work/ProgrammingProjects/GodotProjects/Zugzwang/.mono/temp/obj/Debug/Zugzwang.csproj.CoreCompileInputs.cache
+/home/anicetnougaret/Work/ProgrammingProjects/GodotProjects/Zugzwang/.mono/temp/obj/Debug/Zugzwang.dll
+/home/anicetnougaret/Work/ProgrammingProjects/GodotProjects/Zugzwang/.mono/temp/obj/Debug/Zugzwang.pdb

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Classical Piano - No-Copyright-Music.com - 01 Classical Piano.wav-c5d311e320ccb4ba0a13f4d78a4cd79b.sample"
+
+[deps]
+
+source_file="res://assets/audio/music/Classical Piano - No-Copyright-Music.com - 01 Classical Piano.wav"
+dest_files=[ "res://.import/Classical Piano - No-Copyright-Music.com - 01 Classical Piano.wav-c5d311e320ccb4ba0a13f4d78a4cd79b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

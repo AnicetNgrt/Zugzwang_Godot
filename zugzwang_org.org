@@ -1,0 +1,68 @@
+* Tasks
+** DONE Re-read everything
+   CLOSED: [2020-09-13 Sun 21:35] DEADLINE: <2020-09-13 Sun>
+** DONE Start coding using emacs
+   CLOSED: [2020-09-13 Sun 21:35] DEADLINE: <2020-09-13 Sun>
+** TODO Create account [4/7]
+   DEADLINE: <2020-09-20 Sun>
+*** DONE API base
+    CLOSED: [2020-09-17 Thu 10:11] DEADLINE: <2020-09-18 Fri>
+*** DONE DB setup & models
+    CLOSED: [2020-09-17 Thu 11:56] DEADLINE: <2020-09-18 Fri>
+*** DONE API register
+    CLOSED: [2020-09-18 Fri 09:25] DEADLINE: <2020-09-19 Sat>
+*** DONE API get user data
+    CLOSED: [2020-09-18 Fri 09:41] DEADLINE: <2020-09-19 Sat>
+*** TODO setup github
+*** TODO register UI
+    DEADLINE: <2020-09-20 Sun>
+*** TODO data policy
+    DEADLINE: <2020-09-20 Sun>
+
+** TODO Manage account
+   DEADLINE: <2020-09-27 Sun>
+** TODO Create and join game
+   DEADLINE: <2020-10-04 Sun>
+** TODO Lobby
+   DEADLINE: <2020-10-11 Sun>
+** TODO Get your head around commands again
+   DEADLINE: <2020-10-18 Sun>
+** TODO Timeline working
+   DEADLINE: <2020-10-18 Sun>
+** TODO Dialogue system
+   DEADLINE: <2020-10-25 Sun>
+** TODO Board working
+   DEADLINE: <2020-11-01 Sun>
+** TODO Pawns & placement working
+   DEADLINE: <2020-11-08 Sun>
+** TODO Displacement cards working
+** TODO Attack cards working
+** TODO Cards shop working
+** TODO Full online match playable
+** TODO Playtest #1
+** TODO Quality of life #1
+** TODO Major support cards working
+** TODO Minor support cards working
+** TODO Playtest #2
+** TODO Quality of life #2
+** TODO Trap cards working
+** TODO Art style revision #1
+** TODO Playtest #3
+** TODO Art style revision #2
+** TODO Lobby browser
+** TODO Playtest #4
+** TODO Art style revision #3
+** TODO Account customization
+** TODO Play history
+** TODO Spectator mode
+** TODO AI mode
+** TODO Playtest #5
+** TODO Quality of life #3
+** TODO Tutorials
+** TODO Playtest #6
+** TODO Tutorials revision
+** TODO Trailer and beta hype
+** TODO Playtest #7 (beta)
+** TODO Quality of life #4
+** TODO Release early access
+   DEADLINE: <2021-07-07 Wed>  

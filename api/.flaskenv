@@ -1,0 +1,1 @@
+FLASK_APP=zugzwang_backend.py

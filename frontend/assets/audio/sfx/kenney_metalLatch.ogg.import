@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/kenney_metalLatch.ogg-7af09ac5381ffd5c869e7ff4a1fe5236.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/kenney_metalLatch.ogg"
+dest_files=[ "res://.import/kenney_metalLatch.ogg-7af09ac5381ffd5c869e7ff4a1fe5236.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

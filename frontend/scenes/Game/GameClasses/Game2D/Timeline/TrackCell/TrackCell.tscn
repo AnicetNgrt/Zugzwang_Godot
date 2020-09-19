@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Game/GameClasses/Game2D/Timeline/TrackCell/BannerNpr.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Game/GameClasses/Game2D/Timeline/TrackCell/TrackCell.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Game/GameClasses/Game2D/Timeline/TrackCell/PartCell - proto.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/BaseUiComponents/BaseLabel/BaseLabel.tscn" type="PackedScene" id=4]
+
+[node name="TrackCell" type="VBoxContainer"]
+margin_right = 16.0
+margin_bottom = 23.0
+custom_constants/separation = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parts" type="HBoxContainer" parent="."]
+margin_right = 16.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 0, 13 )
+custom_constants/separation = 1
+
+[node name="PartCell - proto" parent="Parts" instance=ExtResource( 3 )]
+visible = false
+margin_right = 16.0
+color = Color( 1, 1, 1, 1 )
+
+[node name="Banner" type="MarginContainer" parent="."]
+margin_top = 14.0
+margin_right = 16.0
+margin_bottom = 23.0
+
+[node name="BannerNpr" parent="Banner" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 16.0
+margin_bottom = 9.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Num" parent="Banner" instance=ExtResource( 4 )]
+margin_right = 16.0
+rect_scale = Vector2( 1, 1 )
+text = "-1"
+align = 1
+autowrap = false
+
+[node name="Tween" type="Tween" parent="."]

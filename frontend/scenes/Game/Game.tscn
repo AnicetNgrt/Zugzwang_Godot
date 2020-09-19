@@ -1,0 +1,33 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/Game/Game.gd" type="Script" id=1]
+[ext_resource path="res://resources/GameState/GameState.gd" type="Script" id=2]
+[ext_resource path="res://resources/Modifier/ModifierClasses/ModifierIterableClasses/ModifierAddTurn.gd" type="Script" id=3]
+[ext_resource path="res://resources/Modifier/ModifierClasses/ModifierIterableClasses/ModifierIterateModifier.gd" type="Script" id=4]
+[ext_resource path="res://resources/Turn/Turn.gd" type="Script" id=5]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+timeline = [  ]
+sides = [  ]
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 5 )
+parts = [  ]
+num = -1
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 3 )
+silent = true
+turn = SubResource( 2 )
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 4 )
+silent = true
+modifier = SubResource( 3 )
+count = 76
+
+[node name="Game" type="Node"]
+script = ExtResource( 1 )
+gameState = SubResource( 1 )
+executionQueue = [ SubResource( 4 ) ]
