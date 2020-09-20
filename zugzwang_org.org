@@ -3,7 +3,7 @@
    CLOSED: [2020-09-13 Sun 21:35] DEADLINE: <2020-09-13 Sun>
 ** DONE Start coding using emacs
    CLOSED: [2020-09-13 Sun 21:35] DEADLINE: <2020-09-13 Sun>
-** TODO Create account [4/7]
+** TODO Create account [5/7]
    DEADLINE: <2020-09-20 Sun>
 *** DONE API base
     CLOSED: [2020-09-17 Thu 10:11] DEADLINE: <2020-09-18 Fri>
@@ -13,7 +13,8 @@
     CLOSED: [2020-09-18 Fri 09:25] DEADLINE: <2020-09-19 Sat>
 *** DONE API get user data
     CLOSED: [2020-09-18 Fri 09:41] DEADLINE: <2020-09-19 Sat>
-*** TODO setup github
+*** DONE setup github
+    CLOSED: [2020-09-19 Sat 10:31]
 *** TODO register UI
     DEADLINE: <2020-09-20 Sun>
 *** TODO data policy
