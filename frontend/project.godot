@@ -74,6 +74,10 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="Zugzwang"
 config/icon="res://icon.png"
 
+[autoload]
+
+ApiConfig="*res://scripts/globals/ApiConfig.gd"
+
 [display]
 
 window/size/width=1920

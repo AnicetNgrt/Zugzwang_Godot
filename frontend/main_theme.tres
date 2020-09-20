@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=21 format=2]
+[gd_resource type="Theme" load_steps=23 format=2]
 
 [ext_resource path="res://assets/ui/fonts/Jost/static/Jost-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/UI/styleboxflat.tres" type="StyleBox" id=2]
 [ext_resource path="res://resources/UI/styleboxflat_light.tres" type="StyleBox" id=3]
 [ext_resource path="res://resources/UI/styleboxflat_semilight.tres" type="StyleBox" id=4]
+[ext_resource path="res://resources/UI/styleboxflat_dark.tres" type="StyleBox" id=5]
+[ext_resource path="res://resources/UI/small_dynamicfont.tres" type="DynamicFont" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.788235, 0.839216, 0.87451, 1 )
@@ -27,6 +29,15 @@ bg_color = Color( 0.168627, 0.180392, 0.290196, 0.490196 )
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.168627, 0.180392, 0.290196, 1 )
 
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.0666667, 0.0745098, 0.137255, 0.47451 )
+border_color = Color( 0.321569, 0.380392, 0.419608, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing_size = 5
+
 [sub_resource type="DynamicFont" id=5]
 
 [sub_resource type="DynamicFont" id=6]
@@ -35,20 +46,12 @@ bg_color = Color( 0.168627, 0.180392, 0.290196, 1 )
 
 [sub_resource type="DynamicFont" id=8]
 
-[sub_resource type="DynamicFont" id=9]
-size = 45
-use_mipmaps = true
-use_filter = true
-extra_spacing_top = -3
-extra_spacing_bottom = -3
-font_data = ExtResource( 1 )
-
 [sub_resource type="StyleBoxFlat" id=16]
 content_margin_left = 15.0
 content_margin_right = 5.0
 content_margin_top = 5.0
 content_margin_bottom = 5.0
-bg_color = Color( 0, 0, 0, 0.258824 )
+bg_color = Color( 0, 0, 0, 0.933333 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.941176, 0.960784, 0.976471, 0.180392 )
@@ -86,6 +89,24 @@ Button/styles/focus = ExtResource( 4 )
 Button/styles/hover = ExtResource( 4 )
 Button/styles/normal = ExtResource( 2 )
 Button/styles/pressed = ExtResource( 3 )
+CheckBox/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckBox/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+CheckBox/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckBox/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 0
+CheckBox/fonts/font = null
+CheckBox/icons/checked = null
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/unchecked = null
+CheckBox/styles/disabled = ExtResource( 5 )
+CheckBox/styles/focus = ExtResource( 5 )
+CheckBox/styles/hover = ExtResource( 5 )
+CheckBox/styles/hover_pressed = ExtResource( 5 )
+CheckBox/styles/normal = ExtResource( 5 )
+CheckBox/styles/pressed = ExtResource( 5 )
 LineEdit/colors/clear_button_color = Color( 0.941176, 0.960784, 0.976471, 1 )
 LineEdit/colors/clear_button_color_pressed = Color( 0.941176, 0.960784, 0.976471, 1 )
 LineEdit/colors/cursor_color = Color( 0.168627, 0.180392, 0.290196, 1 )
@@ -104,6 +125,7 @@ MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 5
 PanelContainer/styles/panel = ExtResource( 2 )
+PopupPanel/styles/panel = SubResource( 17 )
 RichTextLabel/colors/default_color = Color( 0.941176, 0.960784, 0.976471, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0.788235, 0.839216, 0.87451, 1 )
 RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
@@ -118,7 +140,7 @@ RichTextLabel/fonts/bold_font = SubResource( 5 )
 RichTextLabel/fonts/bold_italics_font = SubResource( 6 )
 RichTextLabel/fonts/italics_font = SubResource( 7 )
 RichTextLabel/fonts/mono_font = SubResource( 8 )
-RichTextLabel/fonts/normal_font = SubResource( 9 )
+RichTextLabel/fonts/normal_font = ExtResource( 6 )
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
 ScrollContainer/styles/bg = SubResource( 16 )

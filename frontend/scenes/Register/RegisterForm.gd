@@ -3,6 +3,7 @@ extends HBoxContainer
 onready var tb_username = $Left/Body/Margin/Parts/Fields/Boxes/TBUsername
 onready var tb_pswd1 = $Left/Body/Margin/Parts/Fields/Boxes/TBPassword
 onready var tb_pswd2 = $Left/Body/Margin/Parts/Fields/Boxes/TBRepeat
+onready var to_remember = $Left/Body/Margin/Parts/Remember/Toggle
 onready var error = $Left/Error
 
 var initial_pos = null
@@ -39,3 +40,6 @@ func _input(event):
 func _mouse_anim(mouse_pos:Vector2):
 	if initial_pos:
 		rect_position = initial_pos + (0.05 * (mouse_pos - rect_position))
+
+func _on_CreateAccountRequest_request_completed(result, response_code, headers, body):
+	pass # Replace with function body.
