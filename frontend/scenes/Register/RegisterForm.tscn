@@ -3,32 +3,26 @@
 [ext_resource path="res://scenes/BaseUiComponents/MenuButton/MenuButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/UI/title_dynamicfont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/Register/RegisterForm.gd" type="Script" id=3]
-[ext_resource path="res://scenes/BaseUiComponents/BaseToggle/BaseToggle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Register/RememberMe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://main_theme.tres" type="Theme" id=5]
 [ext_resource path="res://assets/ui/fonts/Jost/static/Jost-SemiBold.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://scenes/Network/CustomRequest/HTTPRequest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/BaseUiComponents/BaseLabel/BaseLabel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/BaseUiComponents/BaseLabel/BaseTitle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/BaseUiComponents/BaseErrorTag/BaseErrorTag.tscn" type="PackedScene" id=10]
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.564706, 0.215686, 0.286275, 0.54902 )
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxLine" id=3]
+[sub_resource type="StyleBoxLine" id=2]
 color = Color( 0.168627, 0.180392, 0.290196, 0.490196 )
 thickness = 10
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 0.690196, 0.0705882, 1 )
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=4]
 size = 100
 outline_size = 2
 use_mipmaps = true
@@ -58,16 +52,8 @@ custom_constants/separation = 10
 [node name="Title" parent="Left" instance=ExtResource( 9 )]
 custom_fonts/font = ExtResource( 2 )
 
-[node name="Error" type="Label" parent="Left"]
+[node name="Error" parent="Left" instance=ExtResource( 10 )]
 visible = false
-margin_top = 155.0
-margin_right = 1408.0
-margin_bottom = 243.0
-theme = ExtResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_colors/font_color = Color( 0.984314, 0.454902, 0.454902, 1 )
-text = "This is an error message"
-align = 1
 
 [node name="Body" type="PanelContainer" parent="Left"]
 margin_top = 155.0
@@ -159,24 +145,7 @@ max_length = 128
 secret = true
 clear_button_enabled = true
 
-[node name="Remember" type="HBoxContainer" parent="Left/Body/Margin/Parts"]
-margin_top = 309.0
-margin_right = 1336.0
-margin_bottom = 397.0
-custom_constants/separation = 15
-alignment = 2
-
-[node name="Toggle" parent="Left/Body/Margin/Parts/Remember" instance=ExtResource( 4 )]
-margin_left = 721.0
-margin_right = 921.0
-margin_bottom = 88.0
-
-[node name="Label7" parent="Left/Body/Margin/Parts/Remember" instance=ExtResource( 8 )]
-margin_left = 936.0
-margin_right = 1336.0
-margin_bottom = 88.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Remember me"
+[node name="RememberMe" parent="Left/Body/Margin/Parts" instance=ExtResource( 4 )]
 
 [node name="Separator" type="MarginContainer" parent="Left/Body/Margin/Parts"]
 margin_top = 412.0
@@ -193,7 +162,7 @@ margin_top = 20.0
 margin_right = 1296.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 0, 10 )
-custom_styles/separator = SubResource( 3 )
+custom_styles/separator = SubResource( 2 )
 
 [node name="Warnings" type="VBoxContainer" parent="Left/Body/Margin/Parts"]
 margin_top = 457.0
@@ -204,7 +173,7 @@ margin_bottom = 1173.0
 margin_right = 1336.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.180392, 0.290196, 1 )
 text = "Important!"
 align = 1
@@ -268,7 +237,7 @@ custom_constants/separation = 10
 
 [node name="Label" parent="Right/Body" instance=ExtResource( 9 )]
 margin_right = 1006.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Community guidelines"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Right/Body"]

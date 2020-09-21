@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main_theme.tres" type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.564706, 0.215686, 0.286275, 0.54902 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Error" type="Label"]
+margin_top = 155.0
+margin_right = 1408.0
+margin_bottom = 243.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 1 )
+custom_colors/font_color = Color( 0.984314, 0.454902, 0.454902, 1 )
+text = "This is an error message"
+align = 1

@@ -3,8 +3,11 @@ extends HBoxContainer
 onready var tb_username = $Left/Body/Margin/Parts/Fields/Boxes/TBUsername
 onready var tb_pswd1 = $Left/Body/Margin/Parts/Fields/Boxes/TBPassword
 onready var tb_pswd2 = $Left/Body/Margin/Parts/Fields/Boxes/TBRepeat
-onready var to_remember = $Left/Body/Margin/Parts/Remember/Toggle
+onready var to_remember = $Left/Body/Margin/Parts/RememberMe/Toggle
+onready var create_account_request = $Requests/CreateAccountRequest
 onready var error = $Left/Error
+
+signal login_success(remember)
 
 var initial_pos = null
 
@@ -31,7 +34,7 @@ func _on_BUContinue_pressed():
 		tb_pswd1.text = ""
 		tb_pswd2.text = ""
 		return
-	
+	create_account_request.send({"username": username, "password": pswd})
 
 func _input(event):
    if event is InputEventMouseMotion:
@@ -42,4 +45,19 @@ func _mouse_anim(mouse_pos:Vector2):
 		rect_position = initial_pos + (0.05 * (mouse_pos - rect_position))
 
 func _on_CreateAccountRequest_request_completed(result, response_code, headers, body):
-	pass # Replace with function body.
+	print(response_code)
+	print(body.get_string_from_utf8())
+	if result != 0:
+		error.show()
+		error.text = "Connection failed, retry later."
+		return
+	if response_code != 201:
+		var reason = JSON.parse(body.get_string_from_utf8()).result["reason"]
+		match(reason):
+			"USERNAME_TAKEN": reason = "This username is already taken"
+		error.show()
+		error.text = reason
+		return
+	ApiConfig.username = tb_username.text
+	ApiConfig.password = tb_pswd1.text
+	emit_signal("login_success", to_remember.on)

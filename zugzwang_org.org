@@ -3,8 +3,8 @@
    CLOSED: [2020-09-13 Sun 21:35] DEADLINE: <2020-09-13 Sun>
 ** DONE Start coding using emacs
    CLOSED: [2020-09-13 Sun 21:35] DEADLINE: <2020-09-13 Sun>
-** TODO Create account [5/7]
-   DEADLINE: <2020-09-20 Sun>
+** DONE Create account [7/7]
+   CLOSED: [2020-09-20 Sun 21:42] DEADLINE: <2020-09-20 Sun>
 *** DONE API base
     CLOSED: [2020-09-17 Thu 10:11] DEADLINE: <2020-09-18 Fri>
 *** DONE DB setup & models
@@ -15,13 +15,18 @@
     CLOSED: [2020-09-18 Fri 09:41] DEADLINE: <2020-09-19 Sat>
 *** DONE setup github
     CLOSED: [2020-09-19 Sat 10:31]
-*** TODO register UI
-    DEADLINE: <2020-09-20 Sun>
-*** TODO data policy
-    DEADLINE: <2020-09-20 Sun>
+*** DONE register UI
+    CLOSED: [2020-09-20 Sun 21:42] DEADLINE: <2020-09-20 Sun>
+*** DONE data policy
+    CLOSED: [2020-09-20 Sun 21:42] DEADLINE: <2020-09-20 Sun>
 
-** TODO Manage account
+** TODO Manage account [0/1]
    DEADLINE: <2020-09-27 Sun>
+*** TODO Login api
+*** TODO Login UI
+*** TODO Save login
+*** TODO Model enlargement
+*** TODO Dashboard frontend
 ** TODO Create and join game
    DEADLINE: <2020-10-04 Sun>
 ** TODO Lobby

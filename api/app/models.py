@@ -1,10 +1,9 @@
-from app import app, db
 from passlib.apps import custom_app_context as pwd_context
 from itsdangerous import (TimedJSONWebSignatureSerializer
                           as Serializer, BadSignature, SignatureExpired)
+from .db import db, app
 
 class Player(db.Model):
-    __tablename__ = 'players'
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(32), index = True, unique = True, nullable = False)
     password_hash = db.Column(db.String(128), nullable = False)
