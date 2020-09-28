@@ -1,17 +1,17 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import exc
 import sqlite3
-import os
-from dotenv import load_dotenv
-load_dotenv()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SQL_ALCHEMY_DATABASE_SECRET_KEY')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQL_ALCHEMY_DATABASE_URI')
+# app.config.from_object('config.ProdConfig')
+app.config.from_object('config.DevConfig')
+
+#app.config['SECRET_KEY'] = 'djzapdjapmxqxùqxùzgwvas697696KSUHuqiqugsiqg911297'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///zugzwang.db'
 db = SQLAlchemy(app)
 
 from .models import *
+from sqlalchemy import exc
 
 def commit(session):
     try:

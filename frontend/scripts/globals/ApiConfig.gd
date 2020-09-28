@@ -5,20 +5,21 @@ var api_password = ''
 var username = ''
 var password = ''
 var token = ''
+var remember = false
 
 func _ready():
 	load_config()
 
-
 func save_config():
 	var config = File.new()
 	config.open("user://api_config.florin", File.WRITE)
-	
+
 	config.store_line(to_json({
 		"username": username,
-		"password": password
+		"password": password,
+		"remember": remember
 	}))
-	
+
 	config.close()
 
 
@@ -30,7 +31,5 @@ func load_config():
 			var data = parse_json(config.get_line())
 			username = data.get('username', '')
 			password = data.get('password', '')
-	
-	print("username: "+username)
-	print("pswd: "+password)
+			remember = data.get('remember', false)
 	config.close()

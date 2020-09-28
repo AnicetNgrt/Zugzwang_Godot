@@ -1,11 +1,13 @@
 [gd_resource type="Theme" load_steps=23 format=2]
 
-[ext_resource path="res://assets/ui/fonts/Jost/static/Jost-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/ui/fonts/Jost/static/Jost-Light.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/UI/styleboxflat.tres" type="StyleBox" id=2]
 [ext_resource path="res://resources/UI/styleboxflat_light.tres" type="StyleBox" id=3]
 [ext_resource path="res://resources/UI/styleboxflat_semilight.tres" type="StyleBox" id=4]
 [ext_resource path="res://resources/UI/styleboxflat_dark.tres" type="StyleBox" id=5]
 [ext_resource path="res://resources/UI/small_dynamicfont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://resources/UI/styleboxflat_transparent.tres" type="StyleBox" id=7]
+[ext_resource path="res://resources/UI/styleboxflat_black.tres" type="StyleBox" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.788235, 0.839216, 0.87451, 1 )
@@ -20,16 +22,14 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.168627, 0.180392, 0.290196, 1 )
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-content_margin_left = 5.0
-bg_color = Color( 0.168627, 0.180392, 0.290196, 0.490196 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.168627, 0.180392, 0.290196, 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.0666667, 0.0745098, 0.137255, 0.47451 )
 border_color = Color( 0.321569, 0.380392, 0.419608, 1 )
 corner_radius_top_left = 3
@@ -38,37 +38,38 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 anti_aliasing_size = 5
 
+[sub_resource type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+
 [sub_resource type="DynamicFont" id=6]
 
 [sub_resource type="DynamicFont" id=7]
 
-[sub_resource type="DynamicFont" id=8]
-
-[sub_resource type="DynamicFont" id=9]
-
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 15.0
 content_margin_right = 5.0
 content_margin_top = 5.0
 content_margin_bottom = 5.0
-bg_color = Color( 0.0666667, 0.0745098, 0.137255, 0.890196 )
+bg_color = Color( 0.184314, 0.0196078, 0.105882, 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.941176, 0.960784, 0.976471, 0.180392 )
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.835294, 0.368627, 0.368627, 1 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.941176, 0.960784, 0.976471, 0.47451 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.941176, 0.960784, 0.976471, 0.796078 )
 
-[sub_resource type="StyleBoxFlat" id=14]
-content_margin_left = 20.0
-bg_color = Color( 0.0666667, 0.0745098, 0.137255, 0.494118 )
+[sub_resource type="StyleBoxFlat" id=12]
+content_margin_left = 12.0
+bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=14]
 size = 65
 use_mipmaps = true
 use_filter = true
@@ -77,19 +78,19 @@ extra_spacing_bottom = -4
 font_data = ExtResource( 1 )
 
 [resource]
-default_font = SubResource( 16 )
-Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+default_font = SubResource( 14 )
+Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Button/colors/font_color_hover = Color( 0.168627, 0.180392, 0.290196, 1 )
-Button/colors/font_color_pressed = Color( 0.168627, 0.180392, 0.290196, 1 )
+Button/colors/font_color_hover = Color( 0.329412, 0.329412, 0.329412, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/disabled = SubResource( 1 )
-Button/styles/focus = ExtResource( 4 )
-Button/styles/hover = ExtResource( 4 )
-Button/styles/normal = ExtResource( 2 )
+Button/styles/focus = ExtResource( 3 )
+Button/styles/hover = ExtResource( 2 )
+Button/styles/normal = ExtResource( 4 )
 Button/styles/pressed = ExtResource( 3 )
-CheckBox/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+CheckBox/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 CheckBox/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
 CheckBox/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
@@ -107,25 +108,25 @@ CheckBox/styles/hover = ExtResource( 5 )
 CheckBox/styles/hover_pressed = ExtResource( 5 )
 CheckBox/styles/normal = ExtResource( 5 )
 CheckBox/styles/pressed = ExtResource( 5 )
-LineEdit/colors/clear_button_color = Color( 0.941176, 0.960784, 0.976471, 1 )
-LineEdit/colors/clear_button_color_pressed = Color( 0.941176, 0.960784, 0.976471, 1 )
-LineEdit/colors/cursor_color = Color( 0.168627, 0.180392, 0.290196, 1 )
-LineEdit/colors/font_color = Color( 0.788235, 0.839216, 0.87451, 1 )
-LineEdit/colors/font_color_selected = Color( 0.941176, 0.960784, 0.976471, 1 )
+LineEdit/colors/clear_button_color = Color( 1, 1, 1, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 1, 1, 1, 1 )
+LineEdit/colors/font_color = Color( 1, 1, 1, 1 )
+LineEdit/colors/font_color_selected = Color( 1, 1, 1, 1 )
 LineEdit/colors/font_color_uneditable = Color( 0.788235, 0.839216, 0.87451, 0.560784 )
-LineEdit/colors/selection_color = Color( 0.909804, 0.270588, 0.270588, 1 )
+LineEdit/colors/selection_color = Color( 0.835294, 0.368627, 0.368627, 1 )
 LineEdit/constants/minimum_spaces = 12
 LineEdit/fonts/font = null
 LineEdit/icons/clear = null
 LineEdit/styles/focus = SubResource( 2 )
-LineEdit/styles/normal = SubResource( 3 )
-LineEdit/styles/read_only = SubResource( 4 )
+LineEdit/styles/normal = ExtResource( 8 )
+LineEdit/styles/read_only = ExtResource( 7 )
 MarginContainer/constants/margin_bottom = 5
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 5
-PanelContainer/styles/panel = ExtResource( 2 )
-PopupPanel/styles/panel = SubResource( 5 )
+PanelContainer/styles/panel = ExtResource( 5 )
+PopupPanel/styles/panel = SubResource( 3 )
 RichTextLabel/colors/default_color = Color( 0.941176, 0.960784, 0.976471, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0.788235, 0.839216, 0.87451, 1 )
 RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
@@ -136,20 +137,20 @@ RichTextLabel/constants/shadow_offset_x = 1
 RichTextLabel/constants/shadow_offset_y = 1
 RichTextLabel/constants/table_hseparation = 3
 RichTextLabel/constants/table_vseparation = 3
-RichTextLabel/fonts/bold_font = SubResource( 6 )
-RichTextLabel/fonts/bold_italics_font = SubResource( 7 )
-RichTextLabel/fonts/italics_font = SubResource( 8 )
-RichTextLabel/fonts/mono_font = SubResource( 9 )
+RichTextLabel/fonts/bold_font = SubResource( 4 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 5 )
+RichTextLabel/fonts/italics_font = SubResource( 6 )
+RichTextLabel/fonts/mono_font = SubResource( 7 )
 RichTextLabel/fonts/normal_font = ExtResource( 6 )
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
-ScrollContainer/styles/bg = SubResource( 10 )
+ScrollContainer/styles/bg = SubResource( 8 )
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = SubResource( 11 )
-VScrollBar/styles/grabber_highlight = SubResource( 12 )
-VScrollBar/styles/grabber_pressed = SubResource( 13 )
-VScrollBar/styles/scroll = SubResource( 14 )
-VScrollBar/styles/scroll_focus = SubResource( 15 )
+VScrollBar/styles/grabber = SubResource( 9 )
+VScrollBar/styles/grabber_highlight = SubResource( 10 )
+VScrollBar/styles/grabber_pressed = SubResource( 11 )
+VScrollBar/styles/scroll = SubResource( 12 )
+VScrollBar/styles/scroll_focus = SubResource( 13 )

@@ -20,13 +20,23 @@
 *** DONE data policy
     CLOSED: [2020-09-20 Sun 21:42] DEADLINE: <2020-09-20 Sun>
 
-** TODO Manage account [0/1]
+** TODO Manage account [4/6]
    DEADLINE: <2020-09-27 Sun>
-*** TODO Login api
-*** TODO Login UI
-*** TODO Save login
-*** TODO Model enlargement
-*** TODO Dashboard frontend
+*** DONE Login api
+    CLOSED: [2020-09-21 Mon 10:10]
+*** DONE Login UI
+    CLOSED: [2020-09-21 Mon 15:34]
+*** DONE Save login
+    CLOSED: [2020-09-21 Mon 15:34]
+*** DONE Menu switches
+    CLOSED: [2020-09-21 Mon 18:00]
+*** TODO Dashboard frontend [1/5]
+**** DONE Migrate and enlarge
+     CLOSED: [2020-09-22 Tue 11:00]
+**** TODO See basic infos
+**** TODO Logout
+**** TODO Change basic infos
+**** TODO See advanced infos
 ** TODO Create and join game
    DEADLINE: <2020-10-04 Sun>
 ** TODO Lobby

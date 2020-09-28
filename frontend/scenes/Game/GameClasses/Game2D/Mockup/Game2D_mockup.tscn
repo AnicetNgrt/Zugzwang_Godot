@@ -1,0 +1,2120 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/ui/icons/vector-large/plain-circle.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/icons/vector-large/plague-doctor-profile.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/icons/vector-large/ouroboros.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/icons/vector-large/lion.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Game/GameClasses/Game2D/Mockup/Board.gd" type="Script" id=6]
+
+[sub_resource type="SphereMesh" id=1]
+radius = 20.0
+height = 40.0
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SphereMesh" id=2]
+radius = 150.0
+height = 300.0
+radial_segments = 32
+rings = 16
+
+[sub_resource type="Animation" id=13]
+resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 0.00808801 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.75, 0.75 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Environment" id=12]
+background_mode = 4
+glow_enabled = true
+glow_bloom = 0.04
+glow_blend_mode = 0
+glow_hdr_threshold = 1.02
+glow_bicubic_upscale = true
+adjustment_enabled = true
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.25989
+margin_right = 1.25989
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Board" type="Node2D" parent="."]
+position = Vector2( 962.991, 530.314 )
+scale = Vector2( 0.25, 0.170001 )
+script = ExtResource( 6 )
+
+[node name="Tiles" type="Node2D" parent="Board"]
+position = Vector2( -2212.62, -535.732 )
+
+[node name="lines" type="Node2D" parent="Board/Tiles"]
+visible = false
+
+[node name="Tile" type="Line2D" parent="Board/Tiles/lines"]
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile3" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 440, 0 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile2" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 220, 220 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile4" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 220, -220 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile5" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 439.196, 443.113 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile6" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 879.196, 443.113 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile7" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 659.196, 663.113 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile8" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 659.196, 223.113 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile9" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( -2.08093, 882.837 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile10" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 437.919, 882.837 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile11" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 217.919, 1102.84 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile12" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 217.919, 662.837 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile13" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( -442.686, 440.172 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile14" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( -2.68604, 440.172 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile15" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( -222.686, 660.172 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile16" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( -222.686, 220.172 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile17" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 884.33, 881.004 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile18" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1324.33, 881.004 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile19" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1104.33, 1101 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile20" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1104.33, 661.004 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile21" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1323.53, 1324.12 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile22" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1763.53, 1324.12 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile23" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1543.53, 1544.12 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile24" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1543.53, 1104.12 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile25" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 882.249, 1763.84 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile26" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1322.25, 1763.84 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile27" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1102.25, 1983.84 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile28" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1102.25, 1543.84 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile29" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 441.644, 1321.18 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile30" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 881.644, 1321.18 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile31" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 661.644, 1541.18 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile32" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 661.644, 1101.18 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile33" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1773.12, 1758.37 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile34" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2213.12, 1758.37 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile35" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1993.12, 1978.37 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile36" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1993.12, 1538.37 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile37" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2212.32, 2201.48 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile38" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2652.32, 2201.48 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile39" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2432.32, 2421.48 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile40" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2432.32, 1981.48 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile41" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1771.04, 2641.21 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile42" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2211.04, 2641.21 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile43" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1991.04, 2861.21 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile44" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1991.04, 2421.21 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile45" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1330.44, 2198.54 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile46" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1770.44, 2198.54 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile47" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1550.44, 2418.54 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile48" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1550.44, 1978.54 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile49" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 882.901, -882.77 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile50" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1322.9, -882.77 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile51" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1102.9, -662.77 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile52" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1102.9, -1102.77 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile53" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1322.1, -439.657 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile54" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1762.1, -439.657 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile55" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1542.1, -219.657 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile56" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1542.1, -659.657 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile57" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 880.82, 0.0662842 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile58" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1320.82, 0.0662842 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile59" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1100.82, 220.066 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile60" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1100.82, -219.934 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile61" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 440.215, -442.598 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile62" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 880.215, -442.598 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile63" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 660.215, -222.598 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile64" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 660.215, -662.598 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile65" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1767.23, -1.76648 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile66" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2207.23, -1.76648 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile67" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1987.23, 218.234 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile68" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1987.23, -221.767 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile69" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2206.43, 441.346 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile70" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2646.43, 441.346 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile71" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2426.43, 661.347 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile72" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2426.43, 221.347 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile73" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1765.15, 881.07 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile74" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2205.15, 881.07 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile75" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1985.15, 1101.07 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile76" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1985.15, 661.07 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile77" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1324.55, 438.406 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile78" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1764.55, 438.406 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile79" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1544.55, 658.405 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile80" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1544.55, 218.406 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile81" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2656.02, 875.6 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile82" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3096.02, 875.6 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile83" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2876.02, 1095.6 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile84" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2876.02, 655.599 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile85" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3095.22, 1318.71 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile86" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3535.22, 1318.71 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile87" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3315.22, 1538.71 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile88" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3315.22, 1098.71 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile97" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1541.71, -1106.44 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile98" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1321.71, -1326.44 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile99" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1980.9, -663.326 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile100" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 1760.9, -883.326 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile101" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2426.04, -225.436 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile102" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2206.04, -445.436 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile103" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2865.23, 217.677 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile104" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2645.23, -2.32275 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile105" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3314.83, 651.93 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile106" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3094.83, 431.93 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile107" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3754.03, 1095.04 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile108" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3534.03, 875.042 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile89" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2653.94, 1758.44 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile90" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3093.94, 1758.44 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile91" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2873.94, 1978.44 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile109" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2870.65, 2425.12 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile110" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2650.65, 2645.12 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile111" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2429.37, 2864.84 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile112" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2209.37, 3084.84 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile113" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3753.55, 1542.35 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile114" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3533.55, 1762.35 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile115" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3972.35, 1318.68 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile116" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3312.27, 1982.07 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile117" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 3092.27, 2202.07 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile92" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2873.94, 1538.43 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile93" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2213.34, 1315.77 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile94" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2653.34, 1315.77 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile95" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2433.34, 1535.77 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile96" type="Line2D" parent="Board/Tiles/lines"]
+position = Vector2( 2433.34, 1095.77 )
+points = PoolVector2Array( 0, 0, 200, -200, 400, 0, 200, 200, 0, 0 )
+default_color = Color( 0.184314, 0.203922, 0.321569, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Tile6" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2436.43, 476.231 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile7" type="MeshInstance2D" parent="Board/Tiles"]
+self_modulate = Color( 0.184314, 0.0196078, 0.105882, 1 )
+position = Vector2( 2012.37, 899.762 )
+rotation = 0.785397
+mesh = SubResource( 2 )
+
+[node name="Tile10" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1588.1, 1323.6 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile11" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1164.03, 1747.13 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile25" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2857.61, 51.7139 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile8" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2861.44, 475.159 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile9" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2437.37, 898.689 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile12" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2013.1, 1322.53 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile13" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1589.03, 1746.06 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile26" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3282.61, 50.6406 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile14" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2859.61, 898.424 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile15" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2435.54, 1321.95 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile16" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2011.27, 1745.79 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile17" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1587.2, 2169.32 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile27" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3280.78, 473.905 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile18" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3284.61, 897.352 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile19" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2860.55, 1320.88 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile20" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2436.27, 1744.72 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile21" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2012.21, 2168.25 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile28" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3705.78, 472.833 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile22" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3284.83, 1320.97 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile23" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2860.77, 1744.5 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile24" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2436.49, 2168.34 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile29" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2012.43, 2591.87 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile30" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3706, 896.456 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile31" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3709.83, 1319.9 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile32" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3285.77, 1743.43 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile33" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2861.49, 2167.27 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile34" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2437.43, 2590.8 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile35" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 4131.01, 895.382 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile36" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3708.01, 1743.17 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile37" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3283.94, 2166.69 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile38" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2859.67, 2590.53 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile39" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2435.6, 3014.06 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile40" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 4129.18, 1318.65 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile41" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 4133.01, 1742.09 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile42" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3708.94, 2165.62 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile43" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3284.67, 2589.46 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile44" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2860.6, 3012.99 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile45" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 4554.18, 1317.58 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile46" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1165.39, -1213.7 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile47" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 741.329, -790.171 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile48" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 317.054, -366.332 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile49" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( -107.011, 57.1981 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile50" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1586.56, -1638.22 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile51" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1163.57, -790.437 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile52" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 739.5, -366.906 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile53" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 315.226, 56.9324 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile54" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( -108.839, 480.463 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile55" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1584.74, -1214.95 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile56" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1588.57, -791.509 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile57" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1164.5, -367.98 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile58" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 740.229, 55.8591 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile59" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 316.163, 479.39 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile60" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2009.74, -1216.03 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile61" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1588.79, -367.886 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile62" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1164.72, 55.6433 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile63" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 740.449, 479.482 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile64" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 316.384, 903.012 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile65" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2009.96, -792.404 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile66" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2013.79, -368.96 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile67" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1589.73, 54.5715 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile68" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1165.45, 478.409 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile69" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 741.386, 901.939 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile70" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2434.96, -793.479 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile71" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2011.96, 54.304 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile72" type="MeshInstance2D" parent="Board/Tiles"]
+self_modulate = Color( 0.184314, 0.0196078, 0.105882, 1 )
+position = Vector2( 1587.9, 477.835 )
+rotation = 0.785397
+mesh = SubResource( 2 )
+
+[node name="Tile73" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1163.62, 901.674 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile74" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 739.555, 1325.2 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile75" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2433.13, -370.213 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile76" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2436.96, 53.2327 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile77" type="MeshInstance2D" parent="Board/Tiles"]
+self_modulate = Color( 0.184314, 0.0196078, 0.105882, 1 )
+position = Vector2( 2012.9, 476.762 )
+rotation = 0.785397
+mesh = SubResource( 2 )
+
+[node name="Tile78" type="MeshInstance2D" parent="Board/Tiles"]
+self_modulate = Color( 0.184314, 0.0196078, 0.105882, 1 )
+position = Vector2( 1588.63, 900.602 )
+rotation = 0.785397
+mesh = SubResource( 2 )
+
+[node name="Tile79" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1164.56, 1324.13 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile80" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2858.14, -371.286 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile81" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2224.02, 263.816 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile82" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1799.96, 687.346 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile83" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1375.68, 1111.19 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile84" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 951.615, 1534.71 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile85" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2645.19, -160.702 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile86" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2649.02, 262.743 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile87" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2224.96, 686.273 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile88" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1800.68, 1110.11 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile89" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1376.62, 1533.64 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile90" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3070.19, -161.774 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile91" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2647.19, 686.008 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile92" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2223.13, 1109.54 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile93" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1798.85, 1533.38 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile94" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1374.79, 1956.91 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile95" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3068.36, 261.49 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile96" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3072.2, 684.937 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile97" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2648.13, 1108.47 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile98" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2223.86, 1532.3 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile99" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1799.79, 1955.83 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile100" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3493.37, 260.418 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile101" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3072.42, 1108.56 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile102" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2648.35, 1532.09 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile103" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2224.08, 1955.93 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile104" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1800.01, 2379.46 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile105" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3493.59, 684.04 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile106" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3497.42, 1107.49 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile107" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3073.35, 1531.01 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile108" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2649.08, 1954.85 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile109" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2225.01, 2378.38 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile110" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3918.59, 682.967 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile111" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3495.59, 1530.75 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile112" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3071.53, 1954.28 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile113" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2647.25, 2378.12 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile114" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2223.18, 2801.65 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile115" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3916.76, 1106.23 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile116" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3920.59, 1529.68 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile117" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3496.53, 1953.21 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile118" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3072.25, 2377.05 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile119" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2648.19, 2800.58 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile120" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 4341.76, 1105.16 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile121" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3921.91, 1954.49 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile122" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3497.85, 2378.01 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile123" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 3073.57, 2801.85 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile124" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2649.51, 3225.38 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile125" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 4343.08, 1529.97 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile126" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 951.15, -1002.85 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile127" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 527.085, -579.322 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile128" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 102.811, -155.483 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile129" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( -321.254, 268.047 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile130" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1372.32, -1427.37 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile131" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1376.15, -1003.92 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile132" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 952.088, -580.395 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile133" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 527.814, -156.556 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile134" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 103.747, 266.974 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile135" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1797.32, -1428.44 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile136" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1376.37, -580.302 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile137" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 952.309, -156.772 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile138" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 528.034, 267.067 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile139" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 103.969, 690.596 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile140" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1797.54, -1004.82 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile141" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1801.38, -581.376 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile142" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1377.31, -157.844 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile143" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 953.037, 265.994 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile144" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 528.971, 689.524 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile145" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2222.55, -1005.89 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile146" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1799.55, -158.112 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile147" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1375.48, 265.419 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile148" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 951.207, 689.259 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile149" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 527.14, 1112.79 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile150" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2220.72, -582.629 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile151" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2224.55, -159.183 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile152" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1800.48, 264.347 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile153" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 1376.21, 688.187 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile154" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 945.063, 1137.08 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Tile155" type="MeshInstance2D" parent="Board/Tiles"]
+modulate = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+position = Vector2( 2645.72, -583.701 )
+rotation = 0.785397
+mesh = SubResource( 1 )
+
+[node name="Line2D" type="Line2D" parent="Board/Tiles"]
+position = Vector2( -614.772, 270.149 )
+points = PoolVector2Array( 0, 0, 3250, 3250, 5444.11, 1055.38, 2202.18, -2118.5, 0, 0 )
+width = 20.0
+default_color = Color( 0.223529, 0.282353, 0.368627, 0.313726 )
+
+[node name="Pawns" type="Node2D" parent="Board"]
+position = Vector2( -1700, -1030.3 )
+rotation = 0.0195912
+
+[node name="Pawn" type="Node2D" parent="Board/Pawns"]
+position = Vector2( -355.33, 218.534 )
+scale = Vector2( 1.1, 1.1 )
+
+[node name="shadow" type="Sprite" parent="Board/Pawns/Pawn"]
+modulate = Color( 0.0980392, 0.101961, 0.137255, 1 )
+position = Vector2( 1524.36, 841.394 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 1 )
+
+[node name="top" type="Sprite" parent="Board/Pawns/Pawn"]
+self_modulate = Color( 0.223529, 0.282353, 0.368627, 0.443137 )
+position = Vector2( 1525.29, 818.333 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+
+[node name="icon" type="Sprite" parent="Board/Pawns/Pawn"]
+modulate = Color( 0.835294, 0.368627, 0.368627, 1 )
+position = Vector2( 1525.54, 716.257 )
+scale = Vector2( 0.437098, 0.6 )
+texture = ExtResource( 2 )
+
+[node name="Pawn2" type="Node2D" parent="Board/Pawns"]
+position = Vector2( 685.465, -12.4896 )
+scale = Vector2( 1.1, 1.1 )
+
+[node name="shadow" type="Sprite" parent="Board/Pawns/Pawn2"]
+modulate = Color( 0.0980392, 0.101961, 0.137255, 1 )
+position = Vector2( 1524.36, 841.394 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 1 )
+
+[node name="top" type="Sprite" parent="Board/Pawns/Pawn2"]
+self_modulate = Color( 0.223529, 0.282353, 0.368627, 0.443137 )
+position = Vector2( 1525.29, 818.333 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+
+[node name="icon" type="Sprite" parent="Board/Pawns/Pawn2"]
+modulate = Color( 0.835294, 0.368627, 0.368627, 1 )
+position = Vector2( 1525.54, 716.257 )
+scale = Vector2( 0.437098, 0.6 )
+texture = ExtResource( 3 )
+
+[node name="Pawn3" type="Node2D" parent="Board/Pawns"]
+position = Vector2( 1123.28, 391.239 )
+scale = Vector2( 1.1, 1.1 )
+
+[node name="shadow" type="Sprite" parent="Board/Pawns/Pawn3"]
+modulate = Color( 0.0980392, 0.101961, 0.137255, 1 )
+position = Vector2( 1524.36, 841.394 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 1 )
+
+[node name="top" type="Sprite" parent="Board/Pawns/Pawn3"]
+self_modulate = Color( 0.223529, 0.282353, 0.368627, 0.443137 )
+position = Vector2( 1525.29, 818.333 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+
+[node name="icon" type="Sprite" parent="Board/Pawns/Pawn3"]
+modulate = Color( 0.298039, 0.670588, 0.756863, 1 )
+position = Vector2( 1525.54, 716.257 )
+scale = Vector2( 0.437098, 0.6 )
+texture = ExtResource( 4 )
+
+[node name="Line2D" type="Line2D" parent="Board"]
+position = Vector2( 11.4375, 147.811 )
+rotation = 3.98923
+scale = Vector2( 0.817453, 0.817453 )
+points = PoolVector2Array( 100, 0, 0, -100, -100, 0, 0, 100, 100, 0 )
+width = 20.0
+joint_mode = 2
+begin_cap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Board/Line2D"]
+autoplay = "idle"
+anims/idle = SubResource( 13 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 12 )

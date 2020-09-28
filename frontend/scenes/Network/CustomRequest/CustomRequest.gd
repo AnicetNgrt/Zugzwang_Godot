@@ -13,8 +13,9 @@ export(String) var route = '/'
 
 var _true_type = 0
 
-func send(request_dict):
+func send(request_dict, username="", password=""):
 	var query = JSON.print(request_dict)
-	var headers = ["Content-Type: application/json"]
+	var auth=str("Basic ", Marshalls.utf8_to_base64(str(username, ":", password)))
+	var headers = ["Content-Type: application/json","Authorization: "+auth]
 	var url = ApiConfig.api_url+route
 	return request(url, headers, false, _true_type, query)

@@ -5,6 +5,8 @@
 [ext_resource path="res://scenes/Game/GameClasses/Game2D/Timeline/TrackCell/PartCell - proto.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/BaseUiComponents/BaseLabel/BaseLabel.tscn" type="PackedScene" id=4]
 
+
+
 [node name="TrackCell" type="VBoxContainer"]
 margin_right = 16.0
 margin_bottom = 23.0
