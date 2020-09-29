@@ -1,17 +1,17 @@
 extends Node2D
 
+var data = []
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	for i in range(0, 15):
+		data.append([])
+		for j in range(0, 10):
+			data[i].append(1)
 
 func _input(event):
+	_handle_scroll()
+
+func _handle_scroll():
 	if Input.is_action_pressed("scroll_down"):
 		scale.x = clamp(scale.x - 0.01, 0.1, 1)
 		scale.y = scale.x * 0.7

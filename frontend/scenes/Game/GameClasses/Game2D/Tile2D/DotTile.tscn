@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SphereMesh" id=1]
+radius = 20.0
+height = 40.0
+radial_segments = 8
+rings = 4
+
+[node name="DotTile" type="MeshInstance2D"]
+position = Vector2( 2436.43, 476.231 )
+rotation = 0.785397
+mesh = SubResource( 1 )

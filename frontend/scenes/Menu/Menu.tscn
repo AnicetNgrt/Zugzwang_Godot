@@ -38,6 +38,7 @@ uniform float blur_amount : hint_range(0, 5);
 void fragment() {
 	COLOR = textureLod(SCREEN_TEXTURE, SCREEN_UV, blur_amount);
 }"
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = SubResource( 2 )
@@ -281,7 +282,7 @@ __meta__ = {
 factor = 0.4
 
 [node name="Tree" type="MarginContainer" parent="Title"]
-modulate = Color( 0.222701, 0.281725, 0.367578, 1 )
+modulate = Color( 0.223529, 0.282353, 0.368627, 1 )
 material = ExtResource( 20 )
 anchor_left = 0.5
 anchor_top = 1.0
@@ -18977,10 +18978,8 @@ __meta__ = {
 [node name="Requests" type="Node" parent="."]
 
 [node name="PingRequest" parent="Requests" instance=ExtResource( 10 )]
-type = "GET"
 
 [node name="LoginRequest" parent="Requests" instance=ExtResource( 10 )]
-type = "GET"
 route = "/api/v1.0/login"
 
 [node name="Animations" type="Node" parent="."]
