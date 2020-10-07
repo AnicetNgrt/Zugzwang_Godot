@@ -1,0 +1,3 @@
+[submodule "Zugzwang_CPP"]
+	path = zugzwang_cpp_library
+	url = https://github.com/AnicetNgrt/Zugzwang_CPP.git

@@ -8,6 +8,7 @@ onready var ping_request = $Requests/PingRequest
 onready var login_request = $Requests/LoginRequest
 onready var erase_background_anim = $Animations/EraseBackground
 onready var back_menu_button = $Scalable/BackMenuButton
+onready var logged_in_menu = $Scalable/LoggedInMenu
 
 signal _login_attempt_end
 
@@ -17,7 +18,7 @@ var logged_in = false
 
 func _ready():
 	print(OS.get_user_data_dir())
-	$Title/Tree/Root.grow()
+	$Background/Tree/Root.grow()
 
 
 func _on_BUOnline_pressed():
@@ -41,6 +42,8 @@ func _on_BUOnline_pressed():
 		if ! logged_in:
 			_show_login_form()
 		else:
+			erase_background_anim.play("main")
+			yield(erase_background_anim, "animation_finished")
 			_show_user_dashboard()
 	else:
 		_show_login_form()
@@ -49,13 +52,15 @@ func _on_BUOnline_pressed():
 func _show_user_dashboard():
 	main_menu.hide()
 	back_menu_button.show()
-	erase_background_anim.play("main")
+	logged_in_menu.show()
+	logged_in_menu.refresh()
 
 
 func _show_login_form():
 	main_menu.hide()
 	back_menu_button.show()
 	erase_background_anim.play("main")
+	yield(erase_background_anim, "animation_finished")
 	login_form.show()
 
 
@@ -72,11 +77,17 @@ func _on_PingRequest_request_completed(result, response_code, headers, body):
 
 
 func _on_BackMenuButton_pressed():
+	_show_main_menu()
+
+
+func _show_main_menu():
 	register_form.hide()
 	login_form.hide()
+	logged_in_menu.hide()
 	main_menu.show()
 	back_menu_button.hide()
 	erase_background_anim.play_backwards("main")
+	yield(erase_background_anim, "animation_finished")
 	ApiConfig.load_config()
 
 
@@ -93,9 +104,10 @@ func _on_login_success(remember):
 		ApiConfig.save_config()
 		ApiConfig.username = username
 		ApiConfig.password = password
-
-	login_form.hide()
+	
 	register_form.hide()
+	login_form.hide()
+	_show_user_dashboard()
 
 
 func _on_LoginRequest_request_completed(result, response_code, headers, body):
@@ -114,3 +126,12 @@ func _on_LoginForm_goto_register():
 
 func _on_BUQuit_pressed():
 	get_tree().quit()
+
+
+func _on_LoggedInMenu_request_logout():
+	ApiConfig.password = ""
+	ApiConfig.username = ""
+	ApiConfig.token = ""
+	ApiConfig.save_config()
+	logged_in = false
+	_show_main_menu()

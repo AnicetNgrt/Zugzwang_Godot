@@ -13,4 +13,4 @@ func _input(event):
 
 func _mouse_anim(mouse_pos:Vector2):
 	if initial_pos:
-		rect_position = initial_pos + (0.05 * factor * (mouse_pos - (rect_position+(rect_size / 2))))
+		rect_position = initial_pos + (0.05 * factor * (mouse_pos - (rect_position+rect_pivot_offset)))
