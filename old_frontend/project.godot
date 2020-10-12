@@ -9,19 +9,61 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "GameState",
+"language": "GDScript",
+"path": "res://resources/GameState/GameState.gd"
+}, {
+"base": "Resource",
+"class": "Modifier",
+"language": "GDScript",
+"path": "res://resources/Modifier/Modifier.gd"
+}, {
+"base": "ModifierIterable",
+"class": "ModifierAddTurn",
+"language": "GDScript",
+"path": "res://resources/Modifier/ModifierClasses/ModifierIterableClasses/ModifierAddTurn.gd"
+}, {
+"base": "Modifier",
+"class": "ModifierIterable",
+"language": "GDScript",
+"path": "res://resources/Modifier/ModifierClasses/ModifierIterable.gd"
+}, {
+"base": "ModifierIterable",
+"class": "ModifierIterateModifier",
+"language": "GDScript",
+"path": "res://resources/Modifier/ModifierClasses/ModifierIterableClasses/ModifierIterateModifier.gd"
+}, {
+"base": "Resource",
+"class": "Part",
+"language": "GDScript",
+"path": "res://resources/Part/Part.gd"
+}, {
 "base": "Control",
 "class": "PathernsUI_ScalableControl",
 "language": "GDScript",
 "path": "res://scenes/BaseUiComponents/ScalableControl/PathernsUI_ScalableControl.gd"
+}, {
+"base": "Resource",
+"class": "Turn",
+"language": "GDScript",
+"path": "res://resources/Turn/Turn.gd"
 } ]
 _global_script_class_icons={
-"PathernsUI_ScalableControl": ""
+"GameState": "",
+"Modifier": "",
+"ModifierAddTurn": "",
+"ModifierIterable": "",
+"ModifierIterateModifier": "",
+"Part": "",
+"PathernsUI_ScalableControl": "",
+"Turn": ""
 }
 
 [application]
 
 config/name="Zugzwang"
-run/main_scene="res://scenes/Game/Game.tscn"
+run/main_scene="res://scenes/Menu/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
