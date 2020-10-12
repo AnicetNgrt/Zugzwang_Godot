@@ -89,7 +89,6 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="VBoxContainer" parent="Control"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -187,6 +186,7 @@ __meta__ = {
 [node name="Label" parent="Control/Loading" instance=ExtResource( 7 )]
 
 [node name="Error" type="VBoxContainer" parent="Control"]
+visible = false
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
