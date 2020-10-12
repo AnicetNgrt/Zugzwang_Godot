@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/ui/icons/vector-large/plain-circle.png" type="Texture" id=1]
+
+[node name="Tile" type="Sprite3D"]
+modulate = Color( 0.262745, 0.278431, 0.376471, 1 )
+pixel_size = 0.0003
+texture = ExtResource( 1 )

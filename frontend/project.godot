@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "Game",
-"language": "GDScript",
-"path": "res://scenes/Game/Game.gd"
-}, {
 "base": "Resource",
 "class": "GameState",
 "language": "GDScript",
@@ -55,7 +50,6 @@ _global_script_classes=[ {
 "path": "res://resources/Turn/Turn.gd"
 } ]
 _global_script_class_icons={
-"Game": "",
 "GameState": "",
 "Modifier": "",
 "ModifierAddTurn": "",
@@ -75,6 +69,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ApiConfig="*res://scripts/globals/ApiConfig.gd"
+LobbyManager="*res://scripts/globals/LobbyManager.gd"
 
 [debug]
 
@@ -84,6 +79,8 @@ settings/stdout/print_fps=true
 
 window/size/width=1920
 window/size/height=1080
+window/size/test_width=1366
+window/size/test_height=768
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
@@ -130,9 +127,10 @@ file_logging/enable_file_logging=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+quality/shadows/filter_mode=2
 quality/filters/use_nearest_mipmap_filter=true
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.196078, 0.207843, 0.282353, 1 )
 quality/filters/msaa=3
-environment/default_environment="res://default_env.tres"

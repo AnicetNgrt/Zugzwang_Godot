@@ -1,2 +1,0 @@
-﻿32845
-/usr/bin/godot_mono
