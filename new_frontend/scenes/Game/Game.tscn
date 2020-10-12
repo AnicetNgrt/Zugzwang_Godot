@@ -1,0 +1,359 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://scenes/Game/Tile/TileJoint.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Game/Board.gd" type="Script" id=2]
+[ext_resource path="res://assets/ui/fonts/apl/APL386.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/BaseUiComponents/Button/Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui/icons/vector-large/moebius-triangle.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Game/LineEdit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Game/Label.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Game/GameClient.gd" type="Script" id=8]
+[ext_resource path="res://scenes/Game/TinyLabel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Game/LobbyMenu.gd" type="Script" id=10]
+[ext_resource path="res://scenes/Game/Pawn/Pawn.tscn" type="PackedScene" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 65
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="Environment" id=4]
+background_mode = 1
+background_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_unshaded = true
+albedo_color = Color( 0.298039, 0.670588, 0.756863, 1 )
+
+[sub_resource type="Animation" id=6]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 70, 0, 0 ), Vector3( 70, 180, 0 ), Vector3( 70, 0, 0 ) ]
+}
+
+[sub_resource type="QuadMesh" id=7]
+size = Vector2( 0, 0.1 )
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_unshaded = true
+albedo_color = Color( 0.298039, 0.670588, 0.756863, 1 )
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_unshaded = true
+albedo_color = Color( 0.835294, 0.368627, 0.368627, 1 )
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_unshaded = true
+albedo_color = Color( 0.262745, 0.278431, 0.376471, 1 )
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_unshaded = true
+albedo_color = Color( 0.196078, 0.207843, 0.282353, 1 )
+
+[sub_resource type="PlaneMesh" id=12]
+material = SubResource( 11 )
+size = Vector2( 4, 4 )
+
+[node name="GameClient" type="Node"]
+script = ExtResource( 8 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="VBoxContainer" parent="Control"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -335.5
+margin_top = -150.0
+margin_right = 339.5
+margin_bottom = 310.0
+custom_constants/separation = 40
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" parent="Control/MainMenu" instance=ExtResource( 7 )]
+margin_right = 675.0
+text = "Waiting for connection..."
+align = 1
+
+[node name="ChooseName" type="HBoxContainer" parent="Control/MainMenu"]
+margin_left = 25.0
+margin_top = 92.0
+margin_right = 650.0
+margin_bottom = 137.0
+size_flags_horizontal = 4
+custom_constants/separation = 20
+
+[node name="LineEdit" parent="Control/MainMenu/ChooseName" instance=ExtResource( 6 )]
+margin_left = 0.0
+margin_right = 268.0
+align = 1
+max_length = 10
+placeholder_text = "new name"
+
+[node name="ButtonSetName" parent="Control/MainMenu/ChooseName" instance=ExtResource( 4 )]
+margin_left = 288.0
+margin_right = 625.0
+margin_bottom = 45.0
+text = "Change name"
+
+[node name="Separator2" parent="Control/MainMenu" instance=ExtResource( 9 )]
+margin_top = 177.0
+margin_right = 675.0
+margin_bottom = 215.0
+text = "~ ~ ~"
+
+[node name="Join" type="HBoxContainer" parent="Control/MainMenu"]
+margin_top = 255.0
+margin_right = 675.0
+margin_bottom = 300.0
+size_flags_horizontal = 5
+custom_constants/separation = 20
+alignment = 1
+
+[node name="LineEdit" parent="Control/MainMenu/Join" instance=ExtResource( 6 )]
+margin_left = 119.0
+margin_right = 387.0
+align = 1
+
+[node name="ButtonJoin" parent="Control/MainMenu/Join" instance=ExtResource( 4 )]
+margin_left = 407.0
+margin_right = 555.0
+margin_bottom = 45.0
+text = "Join"
+
+[node name="Separator" parent="Control/MainMenu" instance=ExtResource( 9 )]
+margin_top = 340.0
+margin_right = 675.0
+margin_bottom = 378.0
+text = "~ ~ ~"
+
+[node name="Create" parent="Control/MainMenu" instance=ExtResource( 4 )]
+margin_left = 169.0
+margin_top = 418.0
+margin_right = 506.0
+margin_bottom = 460.0
+size_flags_horizontal = 4
+text = "Create room"
+
+[node name="Loading" type="HBoxContainer" parent="Control"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -26.0
+margin_right = 135.0
+margin_bottom = 26.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" parent="Control/Loading" instance=ExtResource( 7 )]
+
+[node name="Error" type="VBoxContainer" parent="Control"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -26.0
+margin_bottom = 26.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorMessage" parent="Control/Error" instance=ExtResource( 7 )]
+margin_right = 1920.0
+text = "Error message"
+align = 1
+
+[node name="ButtonBackError" parent="Control/Error" instance=ExtResource( 4 )]
+margin_left = 886.0
+margin_top = 72.0
+margin_right = 1034.0
+margin_bottom = 114.0
+size_flags_horizontal = 4
+text = "Back"
+
+[node name="LobbyMenu" type="Control" parent="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InviteCode" type="VBoxContainer" parent="Control/LobbyMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -257.851
+margin_top = -124.535
+margin_right = 250.149
+margin_bottom = -0.535339
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" parent="Control/LobbyMenu/InviteCode" instance=ExtResource( 7 )]
+margin_right = 508.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 1 )
+text = "Room code:"
+align = 1
+
+[node name="LineEdit" parent="Control/LobbyMenu/InviteCode" instance=ExtResource( 6 )]
+margin_left = 0.0
+margin_top = 48.0
+margin_right = 508.0
+margin_bottom = 124.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+editable = false
+
+[node name="waiting" parent="Control/LobbyMenu" instance=ExtResource( 7 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -404.329
+margin_top = 141.413
+margin_right = 432.671
+margin_bottom = 193.413
+text = "Waiting for opponent to join..."
+
+[node name="Title" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.094
+margin_top = 63.6931
+margin_right = 149.906
+margin_bottom = 296.693
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_outline_modulate = Color( 0.196078, 0.207843, 0.282353, 1 )
+text = "ZUG
+ZWANG"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coiling-curl" type="TextureRect" parent="Control/Title"]
+modulate = Color( 0.380392, 0.690196, 0.419608, 1 )
+show_behind_parent = true
+margin_right = 512.0
+margin_bottom = 512.0
+rect_scale = Vector2( 0.229194, 0.229194 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FooterCredits" parent="Control" instance=ExtResource( 9 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -363.119
+margin_top = -93.8324
+margin_right = 358.881
+margin_bottom = -14.8324
+custom_colors/font_color = Color( 0.360784, 0.376471, 0.458824, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "/* An online game by Anicet Nougaret
+ * Front w/Godot and back w/node.js */"
+align = 0
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Spatial"]
+environment = SubResource( 4 )
+
+[node name="Camera" type="Camera" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.0335 )
+fov = 50.0
+far = 2000.0
+
+[node name="Board" type="Spatial" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.8, 0.0334992 )
+visible = false
+script = ExtResource( 2 )
+
+[node name="CSGTorus" type="CSGTorus" parent="Spatial/Board"]
+transform = Transform( 1, 0, 0, 0, 0.34202, -0.939692, 0, 0.939692, 0.34202, -5.60499, -1.39983, 0.0115343 )
+inner_radius = 0.196271
+outer_radius = 0.275524
+sides = 24
+ring_sides = 18
+material = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spatial/Board/CSGTorus"]
+autoplay = "idle"
+anims/idle = SubResource( 6 )
+
+[node name="TileJoint" type="MeshInstance" parent="Spatial/Board"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.707, -0.7, -0.02 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+script = ExtResource( 1 )
+
+[node name="Pawn" parent="Spatial/Board" instance=ExtResource( 11 )]
+transform = Transform( 0.708085, -0.00218765, -0.706123, -0.187303, 0.963592, -0.190809, 0.680832, 0.267368, 0.681895, -9.11262, -2.11566, 0 )
+
+[node name="Pawn2" parent="Spatial/Board" instance=ExtResource( 11 )]
+transform = Transform( 0.608521, 0.311662, -0.729773, -0.407639, 0.911801, 0.0494904, 0.680832, 0.267368, 0.681895, -5.61338, -4.2017, 4.09782e-08 )
+material_override = SubResource( 9 )
+
+[node name="Pawn3" parent="Spatial/Board" instance=ExtResource( 11 )]
+transform = Transform( 0.608521, 0.311662, -0.729773, -0.407639, 0.911801, 0.0494904, 0.680832, 0.267368, 0.681895, -8.40589, -5.59399, 4.09782e-08 )
+material_override = SubResource( 10 )
+
+[node name="Background" type="Spatial" parent="Spatial"]
+
+[node name="wall" type="MeshInstance" parent="Spatial/Background"]
+transform = Transform( 9.65847, 0, 0, 0, -2.47997e-07, -5.67352, 0, 1, -4.37114e-08, 0, 0, -4.39901 )
+mesh = SubResource( 12 )
+material/0 = null
+[connection signal="pressed" from="Control/MainMenu/ChooseName/ButtonSetName" to="." method="_on_ButtonSetName_pressed"]
+[connection signal="pressed" from="Control/MainMenu/Join/ButtonJoin" to="." method="_on_ButtonJoin_pressed"]
+[connection signal="pressed" from="Control/MainMenu/Create" to="." method="_on_Create_pressed"]
+[connection signal="pressed" from="Control/Error/ButtonBackError" to="." method="_on_ButtonBackError_pressed"]

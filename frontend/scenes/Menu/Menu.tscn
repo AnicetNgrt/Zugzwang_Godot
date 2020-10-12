@@ -18997,10 +18997,8 @@ __meta__ = {
 [node name="Requests" type="Node" parent="."]
 
 [node name="PingRequest" parent="Requests" instance=ExtResource( 10 )]
-type = "GET"
 
 [node name="LoginRequest" parent="Requests" instance=ExtResource( 10 )]
-type = "GET"
 route = "/api/v1.0/login"
 
 [node name="Animations" type="Node" parent="."]
